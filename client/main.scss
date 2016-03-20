@@ -1,0 +1,71 @@
+@import './scss/App.scss';
+@import './scss/Header.scss';
+@import './scss/MainInfo.scss';
+@import './scss/Badge.scss';
+@import './scss/SideInfo.scss';
+@import './scss/SideWidget.scss';
+@import "./scss/GraphTemp.scss";
+@import "./scss/ForecastBar.scss";
+@import "./scss/PlaceInput.scss";
+@import "./scss/WeatherIcon.scss";
+@import "./scss/TemperatureDisplay.scss";
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.delimit{
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+//DEV
+.component{
+  //border: 1.5px solid red;
+  box-sizing: border-box;
+}
+
+
+.content-area{
+    font-family: 'Questrial';
+    position: absolute;
+    //background-color: green;
+    top:50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 350px;
+    z-index: 100;
+}
+
+
+
+$i: 5;
+
+@while $i<=100{
+  .col-#{$i}{
+    width: $i+%;
+  }
+
+  $i: $i + 5;
+}
+
+.col-33{
+  width: 33.3333%;
+}
+
+
+.group:before,
+.group:after {
+	content: "";
+	display: table;
+}
+
+.group:after {
+	clear: both;
+}
+
+.group {
+	zoom: 1;
+}

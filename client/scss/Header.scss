@@ -1,0 +1,51 @@
+.Header{
+  height: 50px;
+  margin:0;
+  position: relative;
+
+  .unit-container{
+    position: absolute;
+    right: 10px;
+    height: 100%;
+    width: 80px;
+
+    .unit{
+      display: inline-block;
+      width: 50%;
+      height: 100%;
+      position: relative;
+      cursor: pointer;
+
+      &.selected{
+        background-color: rgba(7, 8, 9, 0.55);
+      }
+
+      .label{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        font-family: "Raleway";
+        font-size: 30px;
+        color: white;
+      }
+    }
+
+    }
+
+  .title{
+    display: inline-block;
+    font-family: 'Coda';
+    font-size: 25px;
+    font-weight: 800;
+    color: white;
+
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0,-50%);
+
+    }
+
+}

@@ -1,0 +1,25 @@
+.SideInfo{
+  float: left;
+  width: 35%;
+  height: 100%;
+
+  .container{
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    max-width: 90%;
+    //max-width: 450px;
+    //min-width: 150px;
+    display: inline-block;
+    //margin: auto;
+  }
+
+}
+
+.left{
+  text-align: right;
+}
+
+.right{
+  text-align: left;
+}

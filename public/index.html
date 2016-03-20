@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<link href='https://fonts.googleapis.com/css?family=Righteous|Questrial|Lato|Quicksand|Comfortaa|Coda|Dosis|Passion+One|Cantarell|Rubik+Mono+One' rel='stylesheet' type='text/css'>    <link rel="stylesheet" type="text/css" href="style.css"/>
+
+  <script>
+    function success(pos){
+      console.log("Longitude " + pos.coords.longitude);
+      console.log("Latitude " + pos.coords.latitude);
+    }
+    navigator.geolocation.getCurrentPosition(success);
+  </script>
+
+  </head>
+  <body>
+    <div id="react-view"></div>
+    <script src="app.js"></script>
+    <script type="application/javascript">
+      window.__init_state = {};
+    </script>
+  </body>
+</html>

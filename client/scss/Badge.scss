@@ -1,0 +1,73 @@
+.Badge{
+  float: left;
+  height: 100%;
+  position: relative;
+
+  .container{
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    text-align: center;
+
+    .location{
+      font-size: 27px;
+      font-weight: 200;
+      color: #e04413;
+    }
+
+    .time{
+      font-size: 18px;
+      color: rgb(208, 195, 21);
+    }
+
+    .weather-info{
+      text-align: center;
+      position: relative;
+      height: 75px;
+
+      .WeatherIcon, .temp{
+        margin: 0;
+        display: inline-block;
+
+
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+      .temp{
+        left:50%;
+        //font-size: 35px;
+        padding: 10px;
+        span{
+          //font-size: 15px;
+        }
+      }
+      .WeatherIcon{
+        right: 50%;
+      }
+    }
+
+  }
+
+  .toggle-detail{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    img{
+      width: 100%;
+      height: 100%;
+      animation: fadein 2s;
+    }
+
+    @keyframes fadein{
+      0% {opacity: 0%;}
+      100% {opacity: 100%;}
+    }
+
+  }
+}
