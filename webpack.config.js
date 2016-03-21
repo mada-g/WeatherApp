@@ -35,11 +35,14 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('appStyle.css'),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"production"'
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.UglifyJsPlugin({
         compress: {
-          warnings: false
+          warnings: false,
         }
       })
   ],
