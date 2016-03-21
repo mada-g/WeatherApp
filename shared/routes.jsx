@@ -6,7 +6,7 @@ import {AppX} from './components/App.jsx';
 
 export default function(baseURL){
   return (
-    <Route component={AppX} path='/' >
+    <Route component={AppX} path={baseURL} >
     </Route>
   );
 };

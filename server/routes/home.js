@@ -52,12 +52,12 @@ let initialState = {
 };
 
 
-const routes = Routes('/');
+const routes = Routes('/forecast');
 
 let router = new Router();
 
 
-router.get('/', function *(next){
+router.get('/forecast', function *(next){
 
     console.log(this.req.url);
 
