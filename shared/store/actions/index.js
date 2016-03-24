@@ -19,10 +19,10 @@ export function setHourlyForecast(val){
 }
 
 
-export function setDayIndex(index, date){
+export function setDayIndex(index){
   return {
     type: 'SET_DAY',
-    val: {index, date: dateFormat(date)}
+    val: {index: index}
   }
 }
 
@@ -59,7 +59,7 @@ export function getWeather(place){
                     dispatch(setDataOK(true));
                     dispatch(setStatus('OK'));
                     console.log('ok');
-                    dispatch(setDayIndex(0, response.daily[0].date));
+                    dispatch(setDayIndex(0));
                     console.log(response);
                     return dispatch(setForecastData(response));
                   }
