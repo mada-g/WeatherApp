@@ -17,9 +17,9 @@ router.get('/api/forecast', function *(next){
 
             console.log(this.request.ip);
 
-            const loc = yield geolocationIP.get(this.request.ip);
+            //const loc = yield geolocationIP.get(this.request.ip);
 
-            console.log(loc);
+            //console.log(loc);
 
             const placePrediction = yield googlePlaceAPI.get(this.request.querystring);
 

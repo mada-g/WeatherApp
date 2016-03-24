@@ -2,7 +2,8 @@ import fetch from 'isomorphic-fetch';
 
 function getGeolocation(ip){
   return new Promise((resolve, reject) => {
-    fetch('http://freegeoip.net/json/124.122.130.249')
+    console.log(ip);
+    fetch(`http://geoip.nekudo.com/api/${ip}`)
           .then(response => {return response.json()})
           .then(response => {console.log(response); return response})
           .then(response => {resolve(response)})
@@ -20,7 +21,7 @@ export default {
                   lat: response.latitude,
                   long: response.longitude,
                 },
-                city: `${response.city}, ${response.country_name}`,
+                city: `${response.city}, ${response.country.name}`,
                 status: "OK",
               }
             })

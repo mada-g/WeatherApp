@@ -25,41 +25,46 @@ export class App extends React.Component{
 
   getBackgroundCode = (code) => {
     if(code === 'cloudy' || code === 'vcloudy')
-      return 'clouds.gif';
+      return 'cloudy';
     if(code ==='rain' || code ==='hrain' || code ==='storm')
-      return 'raining.gif';
+      return 'raining';
     if(code ==='sunny' || code ==='pcloudy')
-      return 'telescopes.jpg';
+      return 'sunny';
     if(code ==='snow')
-      return 'snowing.gif';
+      return 'snowing';
   }
 
   renderBackground =(daily, day) =>{
+
+
+    console.log('BACKGROUND: ' + code);
+
+    return <div className="App-gif">
+
+    </div>
+
+  }
+
+  //<img src={`/assets/img/${code}`} />
+
+  //{this.renderBackground(this.props.data.forecast.daily, this.props.app.day)}
+  render(){
+
+    const detail = this.props.app.detail;
+    const dataOK = this.props.app.dataOK;
+    const daily = this.props.data.forecast.daily;
+    const day = this.props.app.day;
+
     let code = "";
     if(daily[day]){
       code = this.getBackgroundCode(daily[day].weatherCoded);
     }
     else{
-      code = 'sunny.jpg';
+      code = 'sunny';
     }
 
-    console.log('BACKGROUND: ' + code);
-
-    return <div className="App-gif">
-      <img src={`/assets/img/${code}`} />
-    </div>
-
-  }
-
-  render(){
-
-    const detail = this.props.app.detail;
-    const dataOK = this.props.app.dataOK;
-
     return <div className="App component">
-
-      {this.renderBackground(this.props.data.forecast.daily, this.props.app.day)}
-
+      <div className={"background-filter " + code}></div>
       <Header {...this.props}/>
       <div className="content-area">
         <MainInfo {...this.props}/>

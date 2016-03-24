@@ -69,7 +69,8 @@ router.get('/forecast', function *(next){
 
     let ip = this.request.ip;
 
-    if(ip === "::ffff:127.0.0.1")
+    console.log(ip);
+    if(ip === "::ffff:127.0.0.1" || ip === "::1")
       ip = "124.122.130.249";
 
     const geolocation = yield geolocationIP.get(ip);
@@ -86,6 +87,12 @@ router.get('/forecast', function *(next){
         store.dispatch(actions.setDataOK(false));
         console.log("data NOT received! " + error);
       }
+    }
+    else{
+      console.log(geolocation.status);
+      store.dispatch(actions.setDataOK(false));
+      store.dispatch(actions.setStatus('ip_error'));
+    }
 
 
       try{
@@ -97,11 +104,9 @@ router.get('/forecast', function *(next){
         this.response.body = {status: "rendering_error"};
       }
 
-    }
 
-    else{
-      this.response.body = {status: "ip_error"};
-    }
+
+
 
 
   });
