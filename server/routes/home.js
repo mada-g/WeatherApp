@@ -78,6 +78,7 @@ router.get('/forecast', function *(next){
     if(geolocation.status === "OK"){
       try{
         console.log("fetching weather data...")
+        console.log("LOC: " + geolocation.loc.lat + " - " + geolocation.loc.long);
         let weatherData = yield weatherAPI.get(geolocation.city, geolocation.loc);
         yield store.dispatch(actions.setForecastData(weatherData));
         store.dispatch(actions.setDataOK(true));

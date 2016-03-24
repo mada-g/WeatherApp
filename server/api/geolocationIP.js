@@ -16,10 +16,11 @@ export default {
   get: function(ip){
     return getGeolocation(ip)
             .then(response => {
+              console.log(response.latitude + " ~~~~ " + response.longitude);
               return {
                 loc:{
-                  lat: response.latitude,
-                  long: response.longitude,
+                  lat: response.location.latitude,
+                  long: response.location.longitude,
                 },
                 city: `${response.city}, ${response.country.name}`,
                 status: "OK",
