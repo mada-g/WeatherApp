@@ -63,7 +63,9 @@ export default class MainInfo extends React.Component{
     const celsius = this.props.app.celsius;
     const status = this.props.app.status;
 
-    console.log("DETAIL DETAIL DETAIL " + detail);
+    console.log(status);
+
+    console.log("DETAIL DETAIL DETAIL " + detail + " DATA DATA DATA " + dataOK);
 
     return <div className="MainInfo component group">
 

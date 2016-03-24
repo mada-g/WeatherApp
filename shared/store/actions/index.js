@@ -58,6 +58,7 @@ export function getWeather(place){
                   if(response.status === "OK"){
                     dispatch(setDataOK(true));
                     dispatch(setStatus('OK'));
+                    console.log('ok');
                     dispatch(setDayIndex(0, response.daily[0].date));
                     console.log(response);
                     return dispatch(setForecastData(response));
