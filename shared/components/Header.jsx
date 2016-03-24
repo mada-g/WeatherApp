@@ -10,6 +10,7 @@ export default class Header extends React.Component{
   handleUnitClick = (isCelsius) =>{
     return () => {
       this.props.setUnit(isCelsius);
+      this.props.getRes("london");
     }
   }
 
