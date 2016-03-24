@@ -69,6 +69,7 @@ export function getWeather(place){
                   }
                 })
                 .catch(error => {
+                  console.log(error);
                   dispatch(setStatus('fetching_error'));
                   return dispatch(setDataOK(false))
                 })
