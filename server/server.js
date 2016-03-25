@@ -12,6 +12,8 @@ const app = koa();
 
 //app.use(cors({origin: 'http://localhost:8080'}));
 
+app.proxy = true;
+
 app.use(mount('/assets', serve('public')));
 
 app.use(api.routes());

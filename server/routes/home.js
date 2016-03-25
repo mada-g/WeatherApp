@@ -67,7 +67,7 @@ router.get('/forecast', function *(next){
 
   //  console.log(initialState.toJS());
 
-    let ip = this.request.ip;
+    let ip = this.request.headers['x-forwarded-for'] || this.request.ip;
 
     console.log(ip);
     if(ip === "::ffff:127.0.0.1" || ip === "::1")
