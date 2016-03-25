@@ -73,7 +73,7 @@ export function getWeather(place){
   return function(dispatch){
     dispatch(setDataOK(false));
     dispatch(setStatus('fetching'));
-    return fetch(`${config.host}/api/forecast?${place}`)
+    return fetch(`http://forecast-mada.herokuapp.com/api/forecast?${place}`)
                 .then(response => {return response.json()})
                 .then(response => {
                   if(response.status === "OK"){
