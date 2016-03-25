@@ -21,7 +21,7 @@ export default class Badge extends React.Component{
 
   render(){
     console.log(">>>>>>>>>>>>>>>>>>>>");
-    console.log(this.props.weatherInfo);
+    console.log(this.props.weatherInfo || "no");
     console.log("<<<<<<<<<<<<<<<<<<<<");
 
     return <div className={"Badge component " + this.props.width}>

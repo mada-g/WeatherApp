@@ -34,20 +34,6 @@ export class App extends React.Component{
       return 'snowing';
   }
 
-  renderBackground =(daily, day) =>{
-
-
-    console.log('BACKGROUND: ' + code);
-
-    return <div className="App-gif">
-
-    </div>
-
-  }
-
-  //<img src={`/assets/img/${code}`} />
-
-  //{this.renderBackground(this.props.data.forecast.daily, this.props.app.day)}
   render(){
 
     const detail = this.props.app.detail;
@@ -67,8 +53,8 @@ export class App extends React.Component{
       <div className={"background-filter " + code}></div>
       <Header {...this.props}/>
       <div className="content-area">
+        
         <MainInfo {...this.props}/>
-
         {(detail && dataOK) ? <GraphTemp{...this.props}/> : null}
         {(detail && dataOK) ? <ForecastBar {...this.props}/> : null}
 

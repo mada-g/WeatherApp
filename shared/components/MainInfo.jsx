@@ -37,7 +37,6 @@ export default class MainInfo extends React.Component{
   renderBadge = (day, detail,celsius) => {
     return <Badge weatherInfo={day}
              location={this.props.app.location}
-             date={this.props.app.date.formatted}
              width={detail ? "col-30" : "col-100"}
              toggleDetail={this.props.toggleDetail}
              detail={detail}
@@ -57,7 +56,7 @@ export default class MainInfo extends React.Component{
 }
 
   render(){
-    const day = this.props.data.forecast.daily[this.props.app.day];
+    const day = this.props.data.forecast.daily[this.props.app.day] || 0;
     const detail = this.props.app.detail;
     const dataOK = this.props.app.dataOK;
     const celsius = this.props.app.celsius;
