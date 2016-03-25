@@ -48,7 +48,7 @@ export class App extends React.Component{
     //else{
       code = 'sunny';
     //}
-//<Header {...this.props}/>
+    <Header {...this.props}/>
     return <div className="App component">
       <div className={"background-filter " + code}></div>
 
