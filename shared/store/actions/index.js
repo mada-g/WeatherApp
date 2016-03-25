@@ -77,10 +77,10 @@ export function getWeather(place){
                 .then(response => {return response.json()})
                 .then(response => {
                   if(response.status === "OK"){
-                    //dispatch(setDataOK(true));
-                    //dispatch(setStatus('OK'));
+                    dispatch(setDataOK(true));
+                    dispatch(setStatus('OK'));
                     console.log('ok');
-                    //dispatch(setDayIndex(0));
+                    dispatch(setDayIndex(0));
                     console.log(response);
                     return dispatch(setForecastData(response));
                   }
