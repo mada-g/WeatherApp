@@ -1,9 +1,18 @@
 .GraphTemp{
-  position: absolute;
-  top: 40%;
-  bottom: 20%;
-  right: 0;
-  left: 0;
+
+  @media screen and (min-width: 768px){
+    position: absolute;
+    top: 40%;
+    bottom: 20%;
+    right: 0;
+    left: 0;
+
+    .GraphTemp-content{
+      height: 100px;
+    }
+
+  }
+
   //height: 40%;
   //border: 2px solid purple;
   margin-bottom: 0;
@@ -12,13 +21,12 @@
 
   .GraphTemp-content{
     width: 660px;
-    height: 100px;
     margin: auto;
   }
 }
 
 .GraphLine{
-  margin-top: 50px;
+  margin-top: 30px;
   border: none;
 
   canvas{

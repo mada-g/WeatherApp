@@ -29,14 +29,16 @@ body{
 
 .content-area{
     font-family: 'Questrial';
-    position: absolute;
-    //background-color: green;
-    top:50px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    min-height: 350px;
-    z-index: 100;
+
+    @media screen and (min-width: 768px){
+      position: absolute;
+      top:50px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      min-height: 350px;
+      z-index: 100;
+    }
 }
 
 

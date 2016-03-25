@@ -4,15 +4,6 @@ import config from '../../config.js';
 import {dayName, dateFormat} from '../../utils/helpers.js';
 
 
-const googleKey = "AIzaSyCWyrzUMv7D_G1hiEs7gDteRpUCUNgjDgQ";
-
-function apiPlaces(place){
-  //return `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${place}&type=(cities)&key=${googleKey}`;
-  return `https://maps.googleapis.com/maps/api/geocode/json?address=${place}&type=(cities)&key=${googleKey}`;
-}
-
-
-
 export function setDailyForecast(val){
   return {
     type: 'SET_DAILY_FORECAST',
@@ -58,16 +49,6 @@ export function setForecastData(data){
 }
 
 
-export function getRes(place){
-  return function(dispatch){
-    return fetch(apiPlaces(place))
-                .then(response => {return response.json()})
-                .then(response => {
-                  console.log(response);
-                })
-                .catch(console.log);
-  }
-}
 
 export function getWeather(place){
   return function(dispatch){

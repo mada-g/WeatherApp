@@ -50,7 +50,9 @@ export class App extends React.Component{
     }
 
     return <div className="App component">
-      <div className={"background-filter " + code}></div>
+      <div className={"background-filter " + code}>
+      </div>
+
       <Header {...this.props}/>
       <div className="content-area">
 

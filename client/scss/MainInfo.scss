@@ -1,7 +1,10 @@
 .MainInfo{
   text-align: center;
-  height: 40%;
-  margin: 0;
+
+  @media screen and (min-width: 768px){
+    height: 40%;
+    margin: 0;
+  }
 
   .statusInfo{
     margin-top: 20px;

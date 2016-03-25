@@ -1,21 +1,16 @@
 .Header{
-  height: 50px;
+
+  text-align: center;
   margin:0;
   position: relative;
 
   .unit-container{
-    position: absolute;
-    right: 10px;
-    height: 100%;
-    width: 80px;
-
     .unit{
+      height: 50px;
       display: inline-block;
       width: 50%;
-      height: 100%;
       position: relative;
       cursor: pointer;
-
       &.selected{
         background-color: rgba(7, 8, 9, 0.55);
       }
@@ -35,17 +30,32 @@
     }
 
   .title{
-    display: inline-block;
     font-family: 'Coda';
     font-size: 22px;
     font-weight: 800;
     color: white;
+    text-align: center;
+    }
 
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translate(0,-50%);
+    @media screen and (min-width: 768px){
+      height: 50px;
+      .unit-container{
+        position: absolute;
+        right: 10px;
+        height: 100%;
+        width: 80px;
+        .unit{
+          height: 100%;
+        }
+      }
 
+      .title{
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translate(0,-50%);
+      }
     }
 
 }
