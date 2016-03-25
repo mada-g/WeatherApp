@@ -15,6 +15,10 @@ export function dayName(date){
 
 
 export function dateFormat(dateIn){
+  if(!dateIn || dateIn.length === 0){
+    return ""
+  }
+  
   const months = [
     'January',
     'February',

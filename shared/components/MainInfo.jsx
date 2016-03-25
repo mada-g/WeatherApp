@@ -56,7 +56,7 @@ export default class MainInfo extends React.Component{
 }
 
   render(){
-    const day = this.props.data.forecast.daily[this.props.app.day] || 0;
+    const day = this.props.data.forecast.daily[this.props.app.day];
     const detail = this.props.app.detail;
     const dataOK = this.props.app.dataOK;
     const celsius = this.props.app.celsius;

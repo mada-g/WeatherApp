@@ -11,18 +11,26 @@ export default class Badge extends React.Component{
   }
 
   renderInfo = (weather, celsius)=>{
-    return <div>
-      <WeatherIcon base="assets/img/icons/" src={weather.weatherCoded} extension = ".png" size="normal"/>
-      <div className="temp">
-        <TemperatureDisplay size="large" value={celsius ? weather.avgTempC:weather.avgTempF} unit={celsius?"C":"F"}/>
+    if(weather.weatherCoded && weather.avgTempC && weather.avgTempF){
+      return <div>
+        <WeatherIcon base="assets/img/icons/" src={weather.weatherCoded} extension = ".png" size="normal"/>
+        <div className="temp">
+          <TemperatureDisplay size="large" value={celsius ? weather.avgTempC:weather.avgTempF} unit={celsius?"C":"F"}/>
+        </div>
       </div>
-    </div>
+    }
+
+    else{
+      return "";
+    }
   }
 
   render(){
     console.log(">>>>>>>>>>>>>>>>>>>>");
-    console.log(this.props.weatherInfo || "no");
+    console.log(this.props.weatherInfo);
     console.log("<<<<<<<<<<<<<<<<<<<<");
+
+    const weatherInfo = this.props.weatherInfo;
 
     return <div className={"Badge component " + this.props.width}>
       <div className="container">
@@ -30,10 +38,10 @@ export default class Badge extends React.Component{
           {this.props.location.toLowerCase()}
         </div>
         <div className="time">
-          {dateFormat(this.props.weatherInfo.date).toLowerCase()}
+          {dateFormat(weatherInfo.date).toLowerCase()}
         </div>
         <div className="weather-info group">
-          {this.renderInfo(this.props.weatherInfo, this.props.celsius)}
+          {this.renderInfo(weatherInfo, this.props.celsius)}
         </div>
       </div>
 
