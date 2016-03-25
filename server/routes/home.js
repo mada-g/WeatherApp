@@ -92,7 +92,7 @@ router.get('/forecast', function *(next){
     else{
       console.log(geolocation.status);
       store.dispatch(actions.setDataOK(false));
-      store.dispatch(actions.setStatus('ip_error'));
+      store.dispatch(actions.setStatus(`ip_error --- ${geolocation.ip}`));
     }
 
 

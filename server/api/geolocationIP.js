@@ -26,7 +26,7 @@ export default {
                 status: "OK",
               }
             })
-            .catch(err => {return {status: "ERROR"}});
+            .catch(err => {return {status: "ERROR", ip: ip}});
 
   }
 }
