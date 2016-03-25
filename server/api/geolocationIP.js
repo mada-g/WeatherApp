@@ -3,7 +3,7 @@ import fetch from 'isomorphic-fetch';
 function getGeolocation(ip){
   return new Promise((resolve, reject) => {
     console.log(ip);
-    fetch(`http://geoip.nekudo.com/api/::ffff`)
+    fetch(`http://geoip.nekudo.com/api/${ip}`)
           .then(response => {return response.json()})
           .then(response => {console.log(response); return response})
           .then(response => {resolve(response)})
