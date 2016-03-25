@@ -10,7 +10,6 @@ export default class Header extends React.Component{
   handleUnitClick = (isCelsius) =>{
     return () => {
       this.props.setUnit(isCelsius);
-      this.props.getRes("london");
     }
   }
 
@@ -21,7 +20,7 @@ export default class Header extends React.Component{
     return <div className="Header component">
 
               <div className="title">
-                forecast.earth
+                madalin.ski / weather
               </div>
 
               <PlaceInput {...this.props}/>

@@ -9,14 +9,14 @@ export default class SideInfo extends React.Component{
 
   renderWidgets = (items)=>{
     return items.map((item)=>{
-      return <SideWidget name={item.name} val={item.val} />
+      return <SideWidget name={item.name} val={item.val} key={item.name}/>
     });
   }
 
   render(){
     return <div className={"SideInfo component " + this.props.position}>
       <div className="container">
-        {this.renderWidgets(this.props.widgetData)}
+          {this.renderWidgets(this.props.widgetData)}
       </div>
     </div>
   }

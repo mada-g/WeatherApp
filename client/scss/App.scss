@@ -14,23 +14,22 @@
     position: fixed;
     height: 100%;
     width: 100%;
-    filter: blur(10px);
     z-index: -1;
 
     &.sunny{
-      background: linear-gradient( #4989c4 , #c36e6e);
+      background: linear-gradient( #4989c4 , #9f8774);
     }
 
     &.raining{
-      background: linear-gradient( #161b26 , #2d437d);
+      background: linear-gradient( #c8d2db , rgb(60, 80, 99));
     }
 
     &.snowing{
-      background: linear-gradient( #DAE2F8 , #e32f08);
+      background: linear-gradient( #454647 , #656565);
     }
 
     &.cloudy{
-      background: linear-gradient( #373d1f, #6b6c6e);
+      background: linear-gradient( #b4cee7 , #1c1b1b);
     }
 
     transition: 0.5s;

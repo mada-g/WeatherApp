@@ -5,7 +5,7 @@ import {extractDate, extractTime, trimDecimals, extractWeatherCode} from '../uti
 const clientID = "nY4l9nBzAlU2OMBj7JkIK";
 const clientSecret = "1vphBwhMHaGOOc8kmWs8HcGUIVeVufI03qHDXCnL";
 
-const fields = "periods.dateTimeISO,periods.avgTempC,periods.avgTempF,periods.maxTempC,periods.maxTempF,periods.minTempC,periods.minTempF,"
+const fields = "periods.dateTimeISO,periods.avgTempC,periods.avgTempF,periods.maxTempC,periods.maxTempF,periods.minTempC,periods.minTempF, periods.precipMM, periods.uvi,"
               + "periods.pop,periods.humidity,periods.pressureMB,periods.windDir,periods.windSpeedKPH,periods.weather,periods.icon,periods.weather,periods.weatherPrimaryCoded, periods.cloudsCoded";
 
 

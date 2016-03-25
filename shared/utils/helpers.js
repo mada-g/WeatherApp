@@ -18,7 +18,7 @@ export function dateFormat(dateIn){
   if(!dateIn || dateIn.length === 0){
     return ""
   }
-  
+
   const months = [
     'January',
     'February',
@@ -42,5 +42,15 @@ export function dateFormat(dateIn){
     dayNum = dayNum.slice(1, dayNum.length);
 
   return months[monthNum-1] + " " + dayNum;
+
+}
+
+
+export function timeFormat(time){
+  if(!time)
+    return "";
+
+  var t = parseInt(time.substring(0, time.lastIndexOf(':'))) + "h";
+  return t || "";
 
 }

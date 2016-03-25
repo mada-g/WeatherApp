@@ -105,6 +105,10 @@ export default function(state = INIT_STATE, action){
       return state.setIn(['app', 'status'], action.val);
     }
 
+    case 'UPDATE_CYCLE': {
+      return state.updateIn(['app', 'sideInfo'], val => (val + 1)%2);
+    }
+
     default:
       return state;
   }

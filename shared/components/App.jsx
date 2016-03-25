@@ -38,16 +38,16 @@ export class App extends React.Component{
 
     const detail = this.props.app.detail;
     const dataOK = this.props.app.dataOK;
-    //const daily = this.props.data.forecast.daily;
-    //const day = this.props.app.day;
+    const daily = this.props.data.forecast.daily;
+    const day = this.props.app.day;
 
     let code = "";
-    //if(daily[day]){
-      //code = this.getBackgroundCode(daily[day].weatherCoded);
-    //}
-    //else{
+    if(daily[day] && daily[day].weatherCoded){
+      code = this.getBackgroundCode(daily[day].weatherCoded);
+    }
+    else{
       code = 'sunny';
-    //}
+    }
 
     return <div className="App component">
       <div className={"background-filter " + code}></div>

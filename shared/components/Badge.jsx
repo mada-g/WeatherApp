@@ -43,14 +43,21 @@ export default class Badge extends React.Component{
         <div className="weather-info group">
           {this.renderInfo(weatherInfo, this.props.celsius)}
         </div>
-      </div>
-
-      <div className="toggle-detail"
-            onClick={this.props.toggleDetail}>
-            {!this.props.detail? <img src="assets/img/icons/expand2.png" /> : <img src="assets/img/icons/collapse2.png" />}
+        <div className="weather-desc">
+          {weatherInfo.weather? weatherInfo.weather : ""}
+        </div>
       </div>
 
     </div>
   }
 
 }
+
+
+/*
+<div className="toggle-detail"
+      onClick={this.props.toggleDetail}>
+      {!this.props.detail? <img src="assets/img/icons/expand2.png" /> : <img src="assets/img/icons/collapse2.png" />}
+</div>
+
+*/

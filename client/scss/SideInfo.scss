@@ -13,7 +13,24 @@
     display: inline-block;
     //margin: auto;
   }
+}
 
+.SideInfo-anim-enter{
+  opacity: 0;
+}
+
+.SideInfo-anim-enter.SideInfo-anim-enter-active{
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+
+.SideInfo-anim-leave{
+  opacity: 1;
+}
+
+.SideInfo-anim-leave.SideInfo-anim-leave-active{
+  opacity: 0;
+  transition: opacity 200ms ease-in;
 }
 
 .left{

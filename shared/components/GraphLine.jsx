@@ -7,6 +7,15 @@ export default class GraphLine extends React.Component{
     super(props);
   }
 
+  renderWeatherIcon = (ctx, src, x, y) => {
+    var img = new Image();
+    img.src = 'assets/img/icons/alt/' + src + '.png';
+    img.className = 'small';
+    ctx.drawImage(img, x, y, 30, 30);
+
+
+  }
+
   renderGraph = (ctx, data, h)=>{
     ctx.lineJoin= "round";
     ctx.lineCap = "round";
@@ -24,6 +33,10 @@ export default class GraphLine extends React.Component{
         ctx.lineTo(n*25 + 30, (h+28)-point.y);
 
 
+      if(n % 6 === 3){
+        this.renderWeatherIcon(ctx, point.img, n*25 + 15, h+40);
+      }
+
       if(n % 6 === 0){
         ctx.font = "800 15px Questrial";
 
@@ -32,7 +45,9 @@ export default class GraphLine extends React.Component{
 
       if(n % 3 === 0){
         ctx.font = "800 13px Questrial";
-
+        /*ctx.globalAlpha = 0.5;
+        this.renderWeatherIcon(ctx, point.img, n*25 + 15, (h-20)-point.y);
+        ctx.globalAlpha = 1;*/
         ctx.fillText(point.avgTemp, n*25 + 30, (h+11)-point.y);
       }
 
@@ -63,7 +78,8 @@ export default class GraphLine extends React.Component{
 
   render(){
     return <div className="GraphLine">
-      <canvas ref="canvas" height={this.props.height+60} width={660}/>
+
+      <canvas ref="canvas" height={this.props.height+100} width={660}/>
     </div>
   }
 

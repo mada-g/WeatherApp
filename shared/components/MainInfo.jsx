@@ -1,19 +1,30 @@
 import React from 'react';
+
 import SideInfo from './SideInfo.jsx';
 import Badge from './Badge.jsx';
 
 const leftfields = [
-  {key:'humidity', name:'humidity', units:'%'},
-  {key: 'pop', name: 'chance of rain', units: '%'},
-  {key: 'pressureMB', name:'pressure', units: ' bar'},
+  [
+    {key:'humidity', name:'humidity', units:'%'},
+    {key: 'pop', name: 'chance of rain', units: '%'},
+    {key: 'precipMM', name: 'rain level', units: ' mm'}
+  ],
+  [
+    {key: 'pressureMB', name:'pressure', units: ' mb'},
+    {key: 'uvi', name:'UV index', units: ''}
+  ]
 ];
 
 function rightfields(celsius){
   return [
-    {key: 'windSpeedKPH', name:'wind speed', units: ' kph'},
-    {key: 'windDir', name:'wind direction', units: ''},
-    {key: celsius?'maxTempC':'maxTempF', name:'max temperature', units: '°'},
-    {key: celsius?'minTempC':'minTempF', name:'min temperature', units: '°'}
+    [
+      {key: 'windSpeedKPH', name:'wind speed', units: ' kph'},
+      {key: 'windDir', name:'wind direction', units: ''}
+    ],
+    [
+      {key: celsius?'maxTempC':'maxTempF', name:'max temperature', units: '°'},
+      {key: celsius?'minTempC':'minTempF', name:'min temperature', units: '°'}
+    ]
   ];
 }
 
@@ -23,7 +34,11 @@ export default class MainInfo extends React.Component{
     super(props);
   }
 
-
+  componentDidMount = () => {
+    const intervalID = setInterval(() => {
+      this.props.updateCycle();
+    }, 3000);
+  }
 
   sideData = (data, fields)=>{
     return fields.map((field) => {
@@ -61,6 +76,7 @@ export default class MainInfo extends React.Component{
     const dataOK = this.props.app.dataOK;
     const celsius = this.props.app.celsius;
     const status = this.props.app.status;
+    const cycle = this.props.app.sideInfo;
 
     console.log(status);
 
@@ -68,11 +84,11 @@ export default class MainInfo extends React.Component{
 
     return <div className="MainInfo component group">
 
-      {(detail && dataOK) ? <SideInfo position="left" widgetData={this.sideData(day, leftfields)}/> : null}
+        {(detail && dataOK) ? <SideInfo position="left" widgetData={this.sideData(day, leftfields[cycle])}/> : null}
 
       {(dataOK) ? this.renderBadge(day, detail,celsius) : <div className="statusInfo">{this.renderStatusInfo(status)}</div> }
 
-           {(detail && dataOK) ? <SideInfo position="right" widgetData={this.sideData(day, rightfields(celsius))}/> : null}
+           {(detail && dataOK) ? <SideInfo position="right" widgetData={this.sideData(day, rightfields(celsius)[cycle])}/> : null}
 
 
 

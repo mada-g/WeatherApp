@@ -131,3 +131,9 @@ export function setUnit(isCelsius){
     val: isCelsius
   }
 }
+
+export function updateCycle(){
+  return {
+    type: "UPDATE_CYCLE",
+  }
+}

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {timeFormat} from '../utils/helpers.js';
+
 import GraphLine from './GraphLine.jsx';
 
 export default class GraphTemp extends React.Component{
@@ -7,6 +9,7 @@ export default class GraphTemp extends React.Component{
   constructor(props){
     super(props);
   }
+
 
   getValueLimits = (arr, celsius) =>{
     let limits = [999,-999,0];
@@ -31,7 +34,8 @@ export default class GraphTemp extends React.Component{
       return {
         avgTemp: temp,
         y: (temp-min)*unit,
-        x: val.time
+        x: timeFormat(val.time),
+        img: val.weatherCoded
       }
     })
   }

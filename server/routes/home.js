@@ -39,6 +39,9 @@ let initialState = {
       dataOK: false,
       status: 'start',
       celsius: true,
+
+      sideInfo: 0,
+
   },
 
   data: {
@@ -65,11 +68,8 @@ router.get('/forecast', function *(next){
 
     yield store.dispatch(actions.initializeState(initialState));
 
-  //  console.log(initialState.toJS());
-
     let ip = this.request.headers['x-forwarded-for'] || this.request.ip;
 
-    console.log(ip);
     if(ip === "::ffff:127.0.0.1" || ip === "::1")
       ip = "124.122.130.249";
 
@@ -99,16 +99,11 @@ router.get('/forecast', function *(next){
       try{
         const state = store.getState().toJS();
         const html = yield componentHTML(routes, this.req.url, store);
-        this.body = yield render('index', {ReactComponent: html, redux: JSON.stringify(state), ip:ip});
+        this.body = yield render('index', {ReactComponent: html, redux: JSON.stringify(state)});
       } catch(error){
         console.log("ERROR: " + error);
         this.response.body = {status: "rendering_error"};
       }
-
-
-
-
-
 
   });
 
