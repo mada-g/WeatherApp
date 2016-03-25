@@ -99,7 +99,7 @@ router.get('/forecast', function *(next){
       try{
         const state = store.getState().toJS();
         const html = yield componentHTML(routes, this.req.url, store);
-        this.body = yield render('index', {ReactComponent: html, redux: JSON.stringify(state)});
+        this.body = yield render('index', {ReactComponent: html, redux: JSON.stringify(state), ip:ip});
       } catch(error){
         console.log("ERROR: " + error);
         this.response.body = {status: "rendering_error"};
