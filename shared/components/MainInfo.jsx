@@ -61,7 +61,7 @@ export default class MainInfo extends React.Component{
   renderStatusInfo = (status) =>{
     if(status === 'fetching')
       return <div>
-              <img src="assets/img/icons/fetching2.gif" />
+              <img src="/assets/img/icons/fetching2.gif" />
              </div>
     else if(status === 'weather_error' || status === 'geolocation_error')
       return <div>An error has occured! Please enter a valid city and country</div>
@@ -77,10 +77,6 @@ export default class MainInfo extends React.Component{
     const celsius = this.props.app.celsius;
     const status = this.props.app.status;
     const cycle = this.props.app.sideInfo;
-
-    console.log(status);
-
-    console.log("DETAIL DETAIL DETAIL " + detail + " DATA DATA DATA " + dataOK);
 
     return <div className="MainInfo component group">
 

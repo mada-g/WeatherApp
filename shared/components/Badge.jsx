@@ -13,7 +13,7 @@ export default class Badge extends React.Component{
   renderInfo = (weather, celsius)=>{
     if(weather.weatherCoded && weather.avgTempC && weather.avgTempF){
       return <div>
-        <WeatherIcon base="assets/img/icons/" src={weather.weatherCoded} extension = ".png" size="normal"/>
+        <WeatherIcon base="/assets/img/icons/" src={weather.weatherCoded} extension = ".png" size="normal"/>
         <div className="temp">
           <TemperatureDisplay size="large" value={celsius ? weather.avgTempC:weather.avgTempF} unit={celsius?"C":"F"}/>
         </div>
@@ -26,10 +26,6 @@ export default class Badge extends React.Component{
   }
 
   render(){
-    console.log(">>>>>>>>>>>>>>>>>>>>");
-    console.log(this.props.weatherInfo);
-    console.log("<<<<<<<<<<<<<<<<<<<<");
-
     const weatherInfo = this.props.weatherInfo;
 
     return <div className={"Badge component " + this.props.width}>

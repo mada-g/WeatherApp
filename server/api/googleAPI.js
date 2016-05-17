@@ -1,11 +1,11 @@
 import fetch from 'isomorphic-fetch';
+import keys from '../../keys';
 
 import {extractDate, extractTime, trimDecimals} from '../utils/formatHelpers.js';
 
-const googleKey = "AIzaSyCWyrzUMv7D_G1hiEs7gDteRpUCUNgjDgQ";
+const googleKey = keys.googleAPI;
 
 function apiPlaces(place){
-  //return `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${place}&type=(cities)&key=${googleKey}`;
   return `https://maps.googleapis.com/maps/api/geocode/json?address=${place}&type=(cities)&key=${googleKey}`;
 }
 

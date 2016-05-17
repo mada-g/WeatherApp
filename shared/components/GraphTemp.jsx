@@ -52,7 +52,6 @@ export default class GraphTemp extends React.Component{
       hourStore.push(forecast.hourly[nextDate][n++]);
     }
 
-    console.log("LENGTH: " + hourStore.length);
     return hourStore;
   }
 

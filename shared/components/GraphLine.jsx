@@ -9,11 +9,9 @@ export default class GraphLine extends React.Component{
 
   renderWeatherIcon = (ctx, src, x, y) => {
     var img = new Image();
-    img.src = 'assets/img/icons/alt/' + src + '.png';
+    img.src = '/assets/img/icons/alt/' + src + '.png';
     img.className = 'small';
     ctx.drawImage(img, x, y, 30, 30);
-
-
   }
 
   renderGraph = (ctx, data, h)=>{

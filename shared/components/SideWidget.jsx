@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 export default class SideWidget extends React.Component{
@@ -11,7 +10,6 @@ export default class SideWidget extends React.Component{
   }
 
   componentDidMount = () =>{
-    console.log(this.props.name + " will mount");
     this.setState({cycle: "mounted"});
   }
 
@@ -19,7 +17,6 @@ export default class SideWidget extends React.Component{
     this.setState({cycle: "unmounted"});
   }
 
-  //    return <ReactCSSTransitionGroup transitionName="SideInfo-anim" transitionEnterTimeout={3000} transitionLeaveTimeout={3000}>
 
   render(){
     return <div className={`SideWidget component ${this.state.cycle}`}>

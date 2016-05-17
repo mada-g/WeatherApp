@@ -16,9 +16,9 @@ export default class ForecastDay extends React.Component{
           {this.props.dayOfWeek}
         </div>
 
-        <WeatherIcon base="assets/img/icons/" src={this.props.weatherCoded} extension = ".png" size="small"/>
+        <WeatherIcon base="/assets/img/icons/" src={this.props.weatherCoded} extension = ".png" size="small"/>
 
-        <TemperatureDisplay size="small" value={this.props.temp} unit="F"/>
+        <TemperatureDisplay size="small" value={this.props.temp} unit={this.props.celsius?"C":"F"}/>
 
         <div>
         </div>

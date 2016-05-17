@@ -6,9 +6,6 @@ export default class WeatherIcon extends React.Component{
   }
 
   render(){
-    console.log("SRC SRC SRC SRC SRC");
-    console.log(this.props.src);
-
     return <div className={"WeatherIcon component " + this.props.size}>
       {(() => {
         if(this.props.src)

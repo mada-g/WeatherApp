@@ -10,11 +10,9 @@ export default class PlaceInput extends React.Component{
 
   handleChange = (event)=>{
     this.setState({inputVal: event.target.value})
-    console.log("INPUT: " + this.state.inputVal);
   }
 
   handleSubmit = (event)=>{
-    console.log("SUBMITED: " + this.state.inputVal);
     this.setState({inputVal: ""});
 
     this.props.getWeather(this.state.inputVal);
@@ -30,7 +28,7 @@ export default class PlaceInput extends React.Component{
         />
 
       <div className="submit-button" onClick={this.handleSubmit}>
-        <img src="assets/img/icons/submit.png" />
+        <img src="/assets/img/icons/submit.png" />
       </div>
 
       </form>
